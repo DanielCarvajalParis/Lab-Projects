@@ -1,0 +1,67 @@
+File permissions in Linux LAB
+Project description
+The scenario of the present LAB is me working as a security professional at a large organization, mainly working with the research team. Part of my job is to ensure users on this team are authorized with the appropriate permissions. This helps keep the system secure. 
+
+In the following points I’ll be examining existing permissions on the file system and determine if the permissions match the authorization that should be given. If they do not match, I’ll be modifying the permissions with Linux's Shell to authorize the appropriate users and remove any unauthorized access.
+Check file and directory details
+To check the file and directory details we first need to determine the current working directory:
+
+
+
+The lab starts with /home/researcher2 as the current working directory. Now we can proceed to navigate to the directory we want to check and list its contents and permissions: 
+
+
+
+The following commands have been used:
+cd to change the directory.
+ls -la to list contents and permissions on the directory.
+Describe the permissions string
+A 10-character string begins each entry and indicates how the permissions on the file are set. For instance, a directory with full permissions for all owner types would be drwxrwxrwx
+
+
+Change file permissions
+Determine whether any files have incorrect permissions and then change the permissions as needed. This action will remove unauthorized access and strengthen security on the system.
+For example, check whether any files in the projects directory have write permissions for the owner type of other:
+
+
+
+Change the permissions of the file “project_k.txt” so that the owner type of other doesn’t have write permissions:
+
+
+
+The following commands have been used:
+chmod o-w project_k.txt to modify permissions for the type of other and remove write permissions in the file “project_k.txt”.
+ls -la to list contents and permissions and confirm the permission change with chmod in the file “project_k.txt”.
+Change file permissions on a hidden file
+The first step would be to check if there are any hidden files, for this the command ls -la is used. Changes in permissions can be done after the hidden files have been identified and the permission determined:
+
+
+
+ Change the permissions of the file “.project_x.txt” so that the file cannot be written to by anyone, but the user and group should still be able to read this file. 
+
+
+
+The following commands have been used:
+chmod u-w,g-w+r .project_x.txt to modify permissions for the type of user and group to remove write permissions for both and add read permissions for the group in the file “.project_x.txt”.
+ls -la to list contents and permissions and confirm the permissions change with chmod in the file “.project_x.txt”.
+Change directory permissions
+First, the group permissions of the  /home/researcher2/projects/drafts directory should be checked and then modify the permissions as required: 
+
+
+
+It can be determined that only the researcher2 user should be allowed to access the drafts directory and its contents and also have execute privileges.
+
+
+
+The following commands have been used:
+chmod g-x drafts to modify permissions only for the group, to remove execute privileges in the directory “drafts”.
+Summary
+The above is a practical experience in using basic Linux Bash shell commands to:
+
+examine file and directory permissions,
+change permissions on files, and
+change permissions on directories.
+
+Shell is an important tool in a Cybersecurity Analyst daily tasks to managing authorization in Linux!
+
+
