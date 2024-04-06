@@ -501,3 +501,11 @@ pretty cool how it changes depending on the value of the variable.
 **What are your key takeaways from this lab?**
 
 I love Python!
+
+There are many useful operators in Python that help you work with variables.
+The = assignment operator allows you to assign or reassign a specific value to a variable.
+The <= comparison operator allows you to compare the value of one variable to the value of another.
+The type() function in Python helps you to determine the data type of an object.
+If you pass in a variable to type(), it will output the data type of the value stored in the variable.
+The print() function in Python allows you to display information.
+It can take in a value directly, a variable that stores a value, or a comparison between variables that evaluates to a Boolean value.
